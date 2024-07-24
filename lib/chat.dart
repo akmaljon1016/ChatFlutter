@@ -45,34 +45,60 @@ class _ChatPageState extends State<ChatPage> {
                           String login = document?['login'] ?? "";
                           return Row(
                             children: [
-                              Expanded(
-                                  child: Visibility(
-                                    visible: widget.prefLogin != login,
-                                    child: Container(
-                                      margin: EdgeInsets.symmetric(
-                                          vertical: 10, horizontal: 10),
-                                      decoration: BoxDecoration(
-                                          color: Colors.red[100],
-                                          borderRadius: BorderRadius.circular(
-                                              20)),
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 30),
-                                      child: Text(document?['text']),
-                                    ),
-                                  )),
+                          Expanded(
+                          child: Visibility(
+                          visible: widget.prefLogin != login,
+                            child: Container(
+                              height: 120,
+                              margin: EdgeInsets.symmetric(
+                                  vertical: 10, horizontal: 10),
+                              decoration: BoxDecoration(
+                                  color: Colors.red[100],
+                                  borderRadius: BorderRadius.circular(
+                                      20)),
+                              padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                children: [
+                                  Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: Text(document?['text'])),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Text("user: "+document?['login']),
+                                    ],
+                                  )
+                                ],
+                              ),
+                            ),
+                          )),
                               Expanded(
                                   child: Visibility(
                                     visible: widget.prefLogin == login,
                                     child: Container(
+                                      height: 120,
                                       margin: EdgeInsets.symmetric(
                                           vertical: 10, horizontal: 10),
                                       decoration: BoxDecoration(
                                           color: Colors.green[100],
                                           borderRadius: BorderRadius.circular(
                                               20)),
-                                      padding: EdgeInsets.symmetric(
-                                          horizontal: 20, vertical: 30),
-                                      child: Text(document?['text']),
+                                      padding: EdgeInsets.only(left: 20,right: 20,top: 20,bottom: 20),
+                                      child: Column(
+                                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                        children: [
+                                          Align(
+                                              alignment: Alignment.centerLeft,
+                                              child: Text(document?['text'])),
+                                          Row(
+                                            mainAxisAlignment: MainAxisAlignment.end,
+                                            children: [
+                                              Text("user: "+document?['login']),
+                                            ],
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   )),
                             ],
